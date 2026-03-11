@@ -1,7 +1,7 @@
 # Login Application
 
 A secure Next.js authentication system with cookie-based session management.
-![Demo](Screen Recording 2026-03-11 102739.gif)
+![Image](https://github.com/user-attachments/assets/f0cbecd4-31ee-4388-8845-4a154f3cdb7d)
 
 ## Features
 
