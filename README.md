@@ -58,7 +58,7 @@ AUTH_PASSWORD=your_password
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd my-app
+cd Login-flow
 ```
 
 2. Install dependencies:
