@@ -1,5 +1,5 @@
 'use client'; 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
@@ -7,7 +7,28 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+    
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/auth/check');
+        if (response.ok) {
+          router.push('/home');
+        } else {
+          setAuthLoading(false);
+        }
+      } catch (error) {
+        setAuthLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, [router]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -42,6 +63,10 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+
+  if (!mounted || authLoading) {
+    return <div className="flex justify-center items-center min-h-screen">Loading...</div>;
+  }
 
   return (
     <div className="max-w-md mx-auto mt-8">
