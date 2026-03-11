@@ -1,6 +1,7 @@
 # Login Application
 
 A secure Next.js authentication system with cookie-based session management.
+<video controls src="Screen Recording 2026-03-11 102739.mp4" title="Title"></video>
 
 ## Features
 
@@ -63,8 +64,7 @@ cd my-app
 2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
+
 ```
 
 3. Set up environment variables:
@@ -76,8 +76,7 @@ cp .env.example .env.local
 4. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
+
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
