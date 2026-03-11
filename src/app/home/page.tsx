@@ -56,15 +56,15 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Home</h1>
-      <p>Welcome to your Home! You are successfully logged in.</p>
+    <div className="p-8 relative">
       <button 
         onClick={handleLogout}
-        className="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+        className="absolute top-8 right-8 bg-red-500 text-white px-4 py-2 rounded"
       >
         Logout
       </button>
+      <h1 className="text-2xl font-bold mb-4">Home</h1>
+      <p>Welcome to your Home! You are successfully logged in.</p>
     </div>
   );
 }
